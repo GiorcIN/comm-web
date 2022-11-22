@@ -1,0 +1,104 @@
+{
+  "name": "classroom-messenger",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/remotes/classroom-messenger/classroom-messenger/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/remotes/classroom-messenger/classroom-messenger",
+        "index": "apps/remotes/classroom-messenger/classroom-messenger/src/index.html",
+        "baseHref": "/",
+        "main": "apps/remotes/classroom-messenger/classroom-messenger/src/main.ts",
+        "polyfills": "apps/remotes/classroom-messenger/classroom-messenger/src/polyfills.js",
+        "tsConfig": "apps/remotes/classroom-messenger/classroom-messenger/tsconfig.app.json",
+        "assets": [
+          "apps/remotes/classroom-messenger/classroom-messenger/src/favicon.ico",
+          "apps/remotes/classroom-messenger/classroom-messenger/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "apps/remotes/classroom-messenger/classroom-messenger/webpack.config.js"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/remotes/classroom-messenger/classroom-messenger/src/environments/environment.js",
+              "with": "apps/remotes/classroom-messenger/classroom-messenger/src/environments/environment.prod.js"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "webpackConfig": "apps/remotes/classroom-messenger/classroom-messenger/webpack.config.prod.js"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/react:module-federation-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "classroom-messenger:build",
+        "hmr": true,
+        "port": 4202
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "classroom-messenger:build:development"
+        },
+        "production": {
+          "buildTarget": "classroom-messenger:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/remotes/classroom-messenger/classroom-messenger/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/remotes/classroom-messenger/classroom-messenger/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "serve-static": {
+      "executor": "@nrwl/web:file-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "classroom-messenger:build",
+        "port": 4202
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "classroom-messenger:build:development"
+        },
+        "production": {
+          "buildTarget": "classroom-messenger:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}

@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@comm-web/ui-classroom-messenger": [
+        "libs/ui-classroom-messenger/src/index.js"
+      ],
+      "@comm-web/ui-dashboard": ["libs/ui-dashboard/src/index.js"],
+      "@comm-web/ui-reporting": ["libs/ui-reporting/src/index.js"],
+      "@comm-web/ui-shared": ["libs/ui-shared/src/index.js"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
