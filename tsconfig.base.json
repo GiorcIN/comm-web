@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@comm-web/data-access/data-context": [
+        "libs/data-access/data-context/src/index.js"
+      ],
       "@comm-web/ui-classroom-messenger": [
         "libs/ui-classroom-messenger/src/index.js"
       ],

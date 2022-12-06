@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Container from './container';
+import Container from '.';
 describe('Container', () => {
   it('should render successfully', () => {
     const { baseElement } = render(<Container />);

@@ -1,9 +1,6 @@
-import { BroadcastsReportTable } from "libs/ui-reporting/src";
-
+import { BroadcastsReportTable } from 'libs/ui-reporting/src';
 
 export function App() {
-  return (
-    <BroadcastsReportTable />
-  );
+  return <BroadcastsReportTable />;
 }
 export default App;

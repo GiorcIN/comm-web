@@ -1,17 +1,20 @@
-import Box from "@mui/material/Box";
-import Link from "@mui/material/Link";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 
-import ChatDetailPreview from "../chat-detail-preview/chat-detail-preview";
+import ChatDetailPreview from '../chat-detail-preview/chat-detail-preview';
+import { styles } from './styles';
 
 export function ChatOverview(props) {
   return (
-    <Paper sx={{ boxShadow: 'none', border: '1px solid #EAE9F0', borderRadius: '1rem', width: '100%', height: '100%', overflowX: 'hidden', overflowY: 'scroll', msOverflowStyle: 'none' }}>
-      <Box sx={{ margin: '2rem' }}>
-        <Box display='flex' sx={{ justifyContent: 'space-between', alignItems: 'baseline'}}>
-          <Typography variant='h6' sx={{ color: 'background.contrastText' }}>6 Unread Messages</Typography>
-          <Link  variant='body1' sx={{ textDecoration: 'none' }}>See Chatssssss</Link>
+    <Paper sx={styles.rootPaper}>
+      <Box sx={styles.rootBox}>
+        <Box sx={styles.titleContainer}>
+          <Typography variant="subtitle2">Recent chat activity</Typography>
+          <Button variant="contained" size="small" sx={styles.chatButton}>
+            See All
+          </Button>
         </Box>
         <Box>
           <ChatDetailPreview />
@@ -19,10 +22,10 @@ export function ChatOverview(props) {
           <ChatDetailPreview />
           <ChatDetailPreview />
           <ChatDetailPreview />
-          <ChatDetailPreview /> 
-          <ChatDetailPreview /> 
-          <ChatDetailPreview />                   
-        </Box>  
+          <ChatDetailPreview />
+          <ChatDetailPreview />
+          <ChatDetailPreview />
+        </Box>
       </Box>
     </Paper>
   );

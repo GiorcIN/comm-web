@@ -1,6 +1,7 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -10,25 +11,27 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import HomeTwoToneIcon from '@mui/icons-material/HomeTwoTone';
 import SensorsOutlinedIcon from '@mui/icons-material/SensorsOutlined';
-import QuestionAnswerOutlinedIcon from '@mui/icons-material/QuestionAnswerOutlined';
+import ForumTwoToneIcon from '@mui/icons-material/ForumTwoTone';
 import ShowChartOutlinedIcon from '@mui/icons-material/ShowChartOutlined';
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
 import NotificationsNoneTwoToneIcon from '@mui/icons-material/NotificationsNoneTwoTone';
 import PersonOutlineTwoToneIcon from '@mui/icons-material/PersonOutlineTwoTone';
+import Logo from '../../../../../apps/host/dashboard/dashboard/src/assets/svg/Logo.svg';
+
+import { styles } from './styles';
 
 const pages = [
-  {label: 'Home', icon: <HomeOutlinedIcon />},
-  {label: 'Broadcasts', icon: <SensorsOutlinedIcon />},
-  {label: 'Chats', icon: <QuestionAnswerOutlinedIcon />},
-  {label: 'Analytics', icon: <ShowChartOutlinedIcon />},
-  {label: 'My Lists', icon: <GroupsOutlinedIcon />},
+  { label: 'Home', icon: <HomeTwoToneIcon /> },
+  { label: 'Broadcasts', icon: <SensorsOutlinedIcon /> },
+  { label: 'Chats', icon: <ForumTwoToneIcon /> },
+  { label: 'Analytics', icon: <ShowChartOutlinedIcon /> },
+  { label: 'My Lists', icon: <GroupsOutlinedIcon /> },
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 export function Navbar(props) {
-
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -48,26 +51,19 @@ export function Navbar(props) {
   };
 
   return (
-    <AppBar position="static" color='background'>
+    <AppBar
+      position="static"
+      sx={{
+        backgroundColor: 'background.light',
+        boxShadow: 'none',
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'Judson',
-              fontWeight: 400,
-              letterSpacing: '.2rem',
-              textDecoration: 'none',
-            }}
-          >
-            COMMUNICATE
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Grid container gap={1} sx={styles.logoContainer}>
+            <img src={Logo} alt="Logo" />
+          </Grid>
+          <Box sx={styles.menuBoxXs}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -103,50 +99,48 @@ export function Navbar(props) {
               ))}
             </Menu>
           </Box>
-          
+
           <Typography
-            variant="h5"
+            variant="h6"
             noWrap
             component="a"
             href=""
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
+            sx={styles.titleTypoXs}
           >
-            LOGO
+            COMMUNICATE
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
+          <Box sx={styles.menuBox}>
             {pages.map(({ label, icon }) => (
               <Button
                 key={label}
                 onClick={handleCloseNavMenu}
-                variant='contained'
-                color='background'
                 disableElevation
                 startIcon={icon}
-                sx={{ marginRight: '0.5rem', textTransform: 'none', boxShadow: 'none', background: 'secondary'}}
+                size="medium"
+                sx={styles.menuButton}
               >
                 {label}
               </Button>
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <IconButton aria-label='notifications' sx={{marginRight: '0.5rem', border: '2px solid #EAE9F0', borderRadius: '25%'}}>
-              <NotificationsNoneTwoToneIcon sx={{ color:'background.contrastText' }}/>
-            </IconButton>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ border: '2px solid #EAE9F0', borderRadius: '25%' }}>
-                <PersonOutlineTwoToneIcon sx={{ color:'background.contrastText' }} />
-              </IconButton>
-            </Tooltip>
+          <Box>
+            <Grid container gap={1}>
+              <Tooltip title="Notifications">
+                <IconButton aria-label="notifications" sx={styles.iconButton}>
+                  <NotificationsNoneTwoToneIcon sx={styles.iconStyle} />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Open settings">
+                <IconButton
+                  aria-label="settings"
+                  onClick={handleOpenUserMenu}
+                  sx={styles.iconButton}
+                >
+                  <PersonOutlineTwoToneIcon sx={styles.iconStyle} />
+                </IconButton>
+              </Tooltip>
+            </Grid>
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
