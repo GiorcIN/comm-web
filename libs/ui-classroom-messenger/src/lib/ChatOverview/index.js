@@ -1,10 +1,7 @@
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import { Box, Paper, Typography, Button } from '@mui/material';
 
-import ChatDetailPreview from '../ChatDetailPreview';
 import { styles } from './styles';
+import ChatDetailPreview from '../ChatDetailPreview';
 
 export function ChatOverview(props) {
   return (

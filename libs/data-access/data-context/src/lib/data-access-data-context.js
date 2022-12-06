@@ -1,6 +1,7 @@
 import { createContext, useState } from 'react';
 
 export const DataContext = createContext({});
+
 export function DataProvider({ children }) {
   const [counter, setCounter] = useState(1);
   return (

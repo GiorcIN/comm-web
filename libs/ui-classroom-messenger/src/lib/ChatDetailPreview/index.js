@@ -1,8 +1,6 @@
-import Grid from '@mui/material/Grid';
-import Avatar from '@mui/material/Avatar';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
+import { Grid, Avatar, Typography, Divider } from '@mui/material';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+
 import { styles } from './styles';
 
 export function ChatDetailPreview(props) {

@@ -1,9 +1,9 @@
 import * as React from 'react';
+import Box from '@mui/material/Box';
 import { Route, Routes } from 'react-router-dom';
 
-import { Navbar } from 'libs/ui-shared/src';
-import Box from '@mui/material/Box';
 import Container from './Container';
+import { Navbar } from 'libs/ui-shared/src';
 
 const ClassroomMessenger = React.lazy(() =>
   import('classroom-messenger/Module')

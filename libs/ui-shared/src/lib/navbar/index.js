@@ -1,26 +1,28 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
+import {
+  AppBar,
+  Box,
+  Grid,
+  Toolbar,
+  IconButton,
+  Typography,
+  Menu,
+  Container,
+  Button,
+  Tooltip,
+  MenuItem,
+} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
 import HomeTwoToneIcon from '@mui/icons-material/HomeTwoTone';
-import SensorsOutlinedIcon from '@mui/icons-material/SensorsOutlined';
 import ForumTwoToneIcon from '@mui/icons-material/ForumTwoTone';
-import ShowChartOutlinedIcon from '@mui/icons-material/ShowChartOutlined';
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
-import NotificationsNoneTwoToneIcon from '@mui/icons-material/NotificationsNoneTwoTone';
+import SensorsOutlinedIcon from '@mui/icons-material/SensorsOutlined';
+import ShowChartOutlinedIcon from '@mui/icons-material/ShowChartOutlined';
 import PersonOutlineTwoToneIcon from '@mui/icons-material/PersonOutlineTwoTone';
-import Logo from '../../../../../apps/host/dashboard/dashboard/src/assets/svg/Logo.svg';
+import NotificationsNoneTwoToneIcon from '@mui/icons-material/NotificationsNoneTwoTone';
 
 import { styles } from './styles';
+import Logo from '../../../../../apps/host/dashboard/dashboard/src/assets/svg/Logo.svg';
 
 const pages = [
   { label: 'Home', icon: <HomeTwoToneIcon /> },

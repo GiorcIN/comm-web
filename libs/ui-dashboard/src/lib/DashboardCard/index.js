@@ -1,9 +1,6 @@
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import { Box, Card, Button, Typography, Grid } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { Grid } from '@mui/material';
+
 import { styles } from './styles';
 
 export function DashboardCard({ type }) {

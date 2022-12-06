@@ -1,10 +1,9 @@
 import React from 'react';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { Container as MainContainer, Grid } from '@mui/material';
-import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
-import { styles } from './styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { Container as MainContainer, Grid, Typography } from '@mui/material';
 
+import { styles } from './styles';
 import { DashboardCard } from 'libs/ui-dashboard/src';
 
 const ClassroomMessenger = React.lazy(() =>
