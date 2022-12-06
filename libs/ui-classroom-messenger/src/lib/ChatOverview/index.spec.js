@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react';
-import UiDashboard from './ui-dashboard';
-describe('UiDashboard', () => {
+import ChatOverview from '.';
+describe('ChatOverview', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<UiDashboard />);
+    const { baseElement } = render(<ChatOverview />);
     expect(baseElement).toBeTruthy();
   });
 });

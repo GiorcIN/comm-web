@@ -3,7 +3,7 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-import ChatDetailPreview from '../chat-detail-preview/chat-detail-preview';
+import ChatDetailPreview from '../ChatDetailPreview';
 import { styles } from './styles';
 
 export function ChatOverview(props) {
