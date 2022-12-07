@@ -47,4 +47,7 @@ export const styles = {
       backgroundColor: 'background.dark',
     },
   },
+  cardTitle: {
+    marginBottom: '1rem',
+  },
 };

@@ -72,5 +72,9 @@ export const theme = createTheme({
     h6: {
       color: '#283056',
     },
+    caption: {
+      fontSize: '0.75rem',
+      color: '#7A73A7',
+    },
   },
 });

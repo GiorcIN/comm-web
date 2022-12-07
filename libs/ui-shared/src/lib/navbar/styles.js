@@ -27,8 +27,8 @@ export const styles = {
     marginRight: '0.5rem',
     textTransform: 'none',
     boxShadow: 'none',
-    '& > *:first-child': {
-      '& > *:first-child': {
+    '& > *:first-of-type span': {
+      '& > *:first-of-type svg': {
         fontSize: '1.75rem',
       },
     },
@@ -42,5 +42,13 @@ export const styles = {
   },
   logoContainer: {
     flexBasis: 'fit-content',
+  },
+  appBar: {
+    backgroundColor: 'background.light',
+    boxShadow: 'none',
+    borderBottom: '1px solid #EAE9F0',
+  },
+  rootMenuXs: {
+    display: { xs: 'block', md: 'none' },
   },
 };

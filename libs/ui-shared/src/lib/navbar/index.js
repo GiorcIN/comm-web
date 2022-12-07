@@ -19,17 +19,16 @@ import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
 import SensorsOutlinedIcon from '@mui/icons-material/SensorsOutlined';
 import ShowChartOutlinedIcon from '@mui/icons-material/ShowChartOutlined';
 import PersonOutlineTwoToneIcon from '@mui/icons-material/PersonOutlineTwoTone';
-import NotificationsNoneTwoToneIcon from '@mui/icons-material/NotificationsNoneTwoTone';
 
 import { styles } from './styles';
 import Logo from '../../../../../apps/host/dashboard/dashboard/src/assets/svg/Logo.svg';
 
 const pages = [
-  { label: 'Home', icon: <HomeTwoToneIcon /> },
-  { label: 'Broadcasts', icon: <SensorsOutlinedIcon /> },
-  { label: 'Chats', icon: <ForumTwoToneIcon /> },
-  { label: 'Analytics', icon: <ShowChartOutlinedIcon /> },
-  { label: 'My Lists', icon: <GroupsOutlinedIcon /> },
+  { label: 'Home', icon: <HomeTwoToneIcon />, route: '/home' },
+  { label: 'Broadcasts', icon: <SensorsOutlinedIcon />, route: '/broadcast' },
+  { label: 'Chats', icon: <ForumTwoToneIcon />, route: '/chats' },
+  { label: 'Analytics', icon: <ShowChartOutlinedIcon />, route: '/' },
+  { label: 'My Lists', icon: <GroupsOutlinedIcon />, route: '/' },
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -53,13 +52,7 @@ export function Navbar(props) {
   };
 
   return (
-    <AppBar
-      position="static"
-      sx={{
-        backgroundColor: 'background.light',
-        boxShadow: 'none',
-      }}
-    >
+    <AppBar position="static" sx={styles.appBar}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Grid container gap={1} sx={styles.logoContainer}>
@@ -90,9 +83,7 @@ export function Navbar(props) {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
+              sx={styles.rootMenuXs}
             >
               {pages.map(({ label, icon }) => (
                 <MenuItem key={label} onClick={handleCloseNavMenu}>
@@ -128,11 +119,6 @@ export function Navbar(props) {
 
           <Box>
             <Grid container gap={1}>
-              <Tooltip title="Notifications">
-                <IconButton aria-label="notifications" sx={styles.iconButton}>
-                  <NotificationsNoneTwoToneIcon sx={styles.iconStyle} />
-                </IconButton>
-              </Tooltip>
               <Tooltip title="Open settings">
                 <IconButton
                   aria-label="settings"
