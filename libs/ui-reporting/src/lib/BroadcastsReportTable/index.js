@@ -27,13 +27,9 @@ export function BroadcastsReportTable() {
         </Button>
       </Box>
       <TableContainer>
-        <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+        <Table sx={styles.tableWrapper} size="small" aria-label="a dense table">
           <TableHead>
-            <TableRow
-              sx={{
-                '&:first-of-type td, &:first-of-type th': { border: 0 },
-              }}
-            >
+            <TableRow sx={styles.tableRow}>
               {columns.map((column) => (
                 <TableCell sx={styles.headerRowStyle} key={column.field}>
                   {column.headerName}

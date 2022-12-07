@@ -14,11 +14,12 @@ const Reporting = React.lazy(() => import('reporting/Module'));
 export function App() {
   return (
     <React.Suspense fallback={null}>
-      <Box sx={{ backgroundColor: 'background.main' }}>
+      <Box sx={{ backgroundColor: 'background.main', height: '100vh' }}>
         <Navbar />
         <Routes>
           <Route path="/" element={<Container />} />
-          <Route path="/classroom-messenger" element={<ClassroomMessenger />} />
+          <Route path="/home" element={<Container />} />
+          <Route path="/chats" element={<ClassroomMessenger />} />
           <Route path="/reporting" element={<Reporting />} />
         </Routes>
       </Box>

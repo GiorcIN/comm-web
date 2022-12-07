@@ -14,7 +14,7 @@ export function DashboardCard({ type }) {
               color={
                 type.id === 'Broadcast' ? 'background.light' : 'primary.main'
               }
-              sx={{ marginBottom: '1rem' }}
+              sx={styles.cardTitle}
             >
               {type.label}
             </Typography>

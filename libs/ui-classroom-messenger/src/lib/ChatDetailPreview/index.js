@@ -8,7 +8,7 @@ export function ChatDetailPreview(props) {
     <>
       <Grid container spacing={1} sx={styles.rootContainer}>
         <Grid item xs={2} sx={styles.avatarContainer}>
-          <Avatar alt="Gio Ramirez" />
+          <Avatar alt="Gio Ramirez" variant="rounded" />
         </Grid>
         <Grid item xs={8} zeroMinWidth sx={styles.messageContainer}>
           <Typography variant="body1" noWrap>

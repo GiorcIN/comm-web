@@ -35,4 +35,10 @@ export const styles = {
       backgroundColor: 'background.dark',
     },
   },
+  tableRow: {
+    '&:first-of-type td, &:first-of-type th': { border: 0 },
+  },
+  tableWrapper: {
+    minWidth: 650,
+  },
 };

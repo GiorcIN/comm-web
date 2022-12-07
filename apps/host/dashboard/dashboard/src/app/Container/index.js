@@ -5,10 +5,7 @@ import { Container as MainContainer, Grid, Typography } from '@mui/material';
 
 import { styles } from './styles';
 import { DashboardCard } from 'libs/ui-dashboard/src';
-
-const ClassroomMessenger = React.lazy(() =>
-  import('classroom-messenger/Module')
-);
+import { ChatOverview } from '@comm-web/ui-classroom-messenger';
 
 const Reporting = React.lazy(() => import('reporting/Module'));
 
@@ -63,7 +60,7 @@ export function Container(props) {
               : styles.messengerContainerAbsolute
           }
         >
-          <ClassroomMessenger />
+          <ChatOverview />
         </Grid>
       </Grid>
       <Grid item xs={12} container rowGap={2} sx={styles.reportingContainer}>
